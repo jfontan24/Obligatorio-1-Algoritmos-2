@@ -12,6 +12,8 @@ public:
     //que una clase sea abstracta significa que no se puede instanciar
     virtual void add(T data) = 0; // virtual significa q podemos heredar
     //virtual void remove(T data) = 0;
+    virtual bool search(T data)=0;
+    virtual void range(T desde, T hasta)=0;
     virtual int size()=0;
     virtual T max() = 0;
     virtual T min() = 0;

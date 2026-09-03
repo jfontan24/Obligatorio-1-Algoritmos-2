@@ -77,8 +77,10 @@ private: // lo pongo para aclarar
         //else
         if(data < n->data){
             n->left = add(n->left, data);
-        }else{
+        }else if(data > n->data){
             n->right = add(n->right,data);
+        }else{
+            return n;
         }
         n->height = 1 + max(height(n->left), height(n->right));
         //si no esta balanceado, lo balanceamos
@@ -86,6 +88,47 @@ private: // lo pongo para aclarar
         return n;
         
     }
+    bool search(node *n, T data){
+        if(n==nullptr){
+            return false;
+        }
+        if(n->data>data){
+            return search(n->left,data);
+        }else if(n->data<data){
+            return search(n->right,data);
+        }
+        return true;
+    }
+    //desde hasta
+    //mayor q el hasta, hacia la izquierda
+    //menor q el desde,  hacia la derecha
+    
+    //cuandp es igual al hasta, solo para la izqy lo imprimo
+    
+    //mayor que el desde y menor que el hasta, me voy para los dos
+    void range(node *n, T desde, T hasta){
+        if(n->data>hasta){
+            range(n->left,desde,hasta);
+        }
+        if(n->data<desde){
+            range(n->right,desde,hasta);
+        }
+        if(n->data==desde){
+            std::cout << n->data << std::endl;
+            range(n->right,desde,hasta);
+        }
+        if(n->data>desde && n->data<hasta){
+            range(n->left,desde,hasta);
+            std::cout << n->data << std::endl;
+            range(n->right,desde,hasta);
+
+        }
+        if(n->data==hasta){
+            range(n->left,desde,hasta);
+            std::cout<<n->data<<std::endl;
+        }
+    }
+
     node *balance(node *n){
         int bF = height(n->left) - height(n->right);
         if(bF == -2){
@@ -111,16 +154,17 @@ private: // lo pongo para aclarar
         }
         return n;
     };
-    
-
-};
-    
     public:
         avl() {}
         virtual void add(T data) override { this->root = add(this->root,data); }
         virtual int size() override { return size(root); }
         virtual T max () override { assert(false); }//sacar
         virtual T min () override { assert(false); }//sacar
-        
+        virtual bool search(T data) override { return search(this->root,data);}
+        virtual void range(T desde, T hasta) override { return range(this->root,desde,hasta);}
 
 };
+    
+    
+        
+
