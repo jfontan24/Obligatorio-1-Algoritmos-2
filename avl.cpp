@@ -107,6 +107,7 @@ private: // lo pongo para aclarar
     
     //mayor que el desde y menor que el hasta, me voy para los dos
     void range(node *n, T desde, T hasta){
+        if(n==nullptr)return;
         if(n->data>hasta){
             range(n->left,desde,hasta);
         }

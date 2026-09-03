@@ -13,29 +13,30 @@ int main()
     bst<std::string>* arbolPintura = new avl<std::string>();
     int cant;
     std::cin>>cant;
+    std::cin.ignore();
     for(int i=1; i<=cant; i++){
         std::string linea;
-        std::cin>>linea;
+        std::getline(std::cin,linea);
         size_t inicio = 0;
-        size_t fin = linea.find(" ");
-        std::string operacion = linea.substr(inicio, fin-1);
+        size_t fin = linea.find(' ');
+        std::string operacion = linea.substr(inicio, fin);
         std::string tipo = linea.substr(fin+1, 1);
         
         if(operacion=="ALTA"){
             if(tipo=="M"){
-                int codigo = std::stoi(linea.substr(fin+2));
+                int codigo = std::stoi(linea.substr(fin+3));
                 arbolMoneda->add(codigo);
             }else{
-                std::string titulo= linea.substr(fin+2);
+                std::string titulo= linea.substr(fin+3);
                 arbolPintura->add(titulo);
             }                
         }else if(operacion=="BUSCAR"){
             bool encontre;
             if(tipo=="M"){
-                int codigo = std::stoi(linea.substr(fin+2));
+                int codigo = std::stoi(linea.substr(fin+3));
                 encontre = arbolMoneda->search(codigo);
             }else{
-                std::string titulo= linea.substr(fin+2);
+                std::string titulo= linea.substr(fin+3);
                 encontre = arbolPintura->search(titulo);
             }
             if(encontre){
