@@ -159,8 +159,6 @@ private: // lo pongo para aclarar
         avl() {}
         virtual void add(T data) override { this->root = add(this->root,data); }
         virtual int size() override { return size(root); }
-        virtual T max () override { assert(false); }//sacar
-        virtual T min () override { assert(false); }//sacar
         virtual bool search(T data) override { return search(this->root,data);}
         virtual void range(T desde, T hasta) override { return range(this->root,desde,hasta);}
 
