@@ -21,4 +21,4 @@
 
 ## 2026-09-08 — En conjunto (Julieta y Victoria) — En conjunto
 - Arreglamos error que teníamos en la prueba 10.in: nos habían quedado funciones con tipo int que le pasabamos un long, entonces cambiamos todo a long y se arregló.
-- Luego, al correr la prueba 200000.in, nos dimos cuenta que en la función RANGO, imprimía el mismo número dos veces porque era al mismo tiempo el desde y el hasta. Andan pruebas 10.in, 100.in y 200000.in.
+- Luego, al correr la prueba 200000.in, nos dimos cuenta que en la función RANGO, imprimía el mismo número dos veces porque era al mismo tiempo el desde y el hasta. -Andan pruebas 10, 100, 1000, 10000, 100000, 200000, duplicados, ejemplo2, ejemplo3, ejemplo4, montonoCreciente, monotonoDecreciente, minimo, pocasLetras, monotonoPinturas, rangosAngostos, rangosVacios (todas).
