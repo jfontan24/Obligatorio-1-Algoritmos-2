@@ -8,7 +8,10 @@
 > con comentarios en el código fuente. La omisión de fuentes puede considerarse plagio.
 
 ## Ejercicio 1
-- Implementación íntegramente propia, sin fuentes externas.
+- Codigo template de avl y bst basado en el visto en clase. Tambien nos basamos en las siguientes paginas para el uso de cin, getline y otros metodos de string:
+    - https://www.w3schools.com/cpp/cpp_ref_string.asp 
+    - https://www.geeksforgeeks.org/cpp/getline-string-c/
+    - https://www.geeksforgeeks.org/cpp/cin-in-c/
 
 ## Ejercicio 2
 - Implementación íntegramente propia, sin fuentes externas.

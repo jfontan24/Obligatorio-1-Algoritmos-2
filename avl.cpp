@@ -1,6 +1,9 @@
 #pragma once
 #include "bst.cpp"
 #include <assert.h>
+#include <iostream>
+
+//template visto en clase
 
 template <class T> class avl : public bst<T> {
 // en mi árbol binario de busqueda no le voy a definir el tipo. Lo voy a definir desde afuera
@@ -13,7 +16,7 @@ private: // lo pongo para aclarar
         T data;
         node *left = nullptr;
         node *right = nullptr;
-        int height = 1;
+        long height = 1;
 
         //
         node(T data){
@@ -21,18 +24,18 @@ private: // lo pongo para aclarar
         }
     };
     node* root = nullptr;
-    int size(node *n){
+    long size(node *n){
         if(n==nullptr){
             return 0;
         }
         return 1 + size(n->left) + size(n->right);
     }
-    int max(int a, int b){
+    long max(long a, long b){
         if(a>b)
             return a;
         return b;
     }
-    int height(node *n){
+    long height(node *n){
         if(n==nullptr){
             return 0;
         }
@@ -124,17 +127,17 @@ private: // lo pongo para aclarar
             range(n->right,desde,hasta);
 
         }
-        if(n->data==hasta){
+        if(n->data==hasta && n->data!=desde){
             range(n->left,desde,hasta);
             std::cout<<n->data<<std::endl;
         }
     }
 
     node *balance(node *n){
-        int bF = height(n->left) - height(n->right);
+        long bF = height(n->left) - height(n->right);
         if(bF == -2){
             //desbalance der-?
-            int bFRight = height(n->right->left) - height(n->right->right);
+            long bFRight = height(n->right->left) - height(n->right->right);
             if(bFRight == -1){
                 //desbalance der-der
                 n=leftRotation(n);
@@ -144,7 +147,7 @@ private: // lo pongo para aclarar
             }
         }else if(bF==2){
             //desbalance izq-?
-            int bFLeft = height(n->left->left) - height(n->left->right);
+            long bFLeft = height(n->left->left) - height(n->left->right);
             if(bFLeft==-1){
                 //desbalance izq-der
                 n=leftRightRotation(n);
@@ -158,7 +161,7 @@ private: // lo pongo para aclarar
     public:
         avl() {}
         virtual void add(T data) override { this->root = add(this->root,data); }
-        virtual int size() override { return size(root); }
+        virtual long size() override { return size(root); }
         virtual bool search(T data) override { return search(this->root,data);}
         virtual void range(T desde, T hasta) override { return range(this->root,desde,hasta);}
 

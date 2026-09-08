@@ -1,6 +1,7 @@
 #pragma once
 
 template <class T> 
+//template visto en clase
 // en mi árbol binario de busqueda no le voy a definir el tipo. Lo voy a definir desde afuera
 
 //en la clase por defecto son privado
@@ -14,7 +15,5 @@ public:
     //virtual void remove(T data) = 0;
     virtual bool search(T data)=0;
     virtual void range(T desde, T hasta)=0;
-    virtual int size()=0;
-    virtual T max() = 0;
-    virtual T min() = 0;
+    virtual long size()=0;
 };

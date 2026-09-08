@@ -9,7 +9,7 @@
 
 int main()
 {
-    bst<int>* arbolMoneda = new avl<int>();
+    bst<long>* arbolMoneda = new avl<long>();
     bst<std::string>* arbolPintura = new avl<std::string>();
     int cant;
     std::cin>>cant;
@@ -26,7 +26,7 @@ int main()
         if(operacion=="ALTA"){
             if(tipo=="M"){
                 
-                unsigned long long codigo = std::stoll(linea.substr(fin+3));
+                long codigo = std::stol(linea.substr(fin+3));
                 
                 arbolMoneda->add(codigo);
                 
@@ -38,7 +38,7 @@ int main()
             bool encontre;
             if(tipo=="M"){
 
-                unsigned long long codigo = std::stoll(linea.substr(fin+3));
+                long codigo = std::stol(linea.substr(fin+3));
                 encontre = arbolMoneda->search(codigo);
             }else{
                 
@@ -59,8 +59,8 @@ int main()
                 
                 size_t fin2 = linea.find(' ',fin+3);
                
-                unsigned long long desde = std::stoll(linea.substr(fin+3,(fin2)-fin+3));
-                unsigned long long hasta = std::stoll(linea.substr(fin2+1));
+                long desde = std::stol(linea.substr(fin+3,(fin2)-fin+3));
+                long hasta = std::stol(linea.substr(fin2+1));
                 arbolMoneda->range(desde,hasta);
             }else{
                 size_t fin2 = linea.find(' ',fin+3);

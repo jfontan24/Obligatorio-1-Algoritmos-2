@@ -19,6 +19,6 @@
 - Realizamos la prueba ejemplo1 y dio el resultado correcto.
 - Al realizar más pruebas nos dimos cuenta que nos habiamos olvidado del tamaño que podian tomar los numeros en el código de la moneda, usamos int y al ser números mas grandes todo se rompe (error out_of_range). Intentamos cambiar los ints por long long pero el error persiste. Queda pendiente resolver. Sospechamos que debe ser por ints que quedaron en el camino en otras funciones.
 
-## AAAA-MM-DD — En conjunto
-- Ejemplo: Implementamos ... Bug: ... Lo corregimos ...
-- Pasan los casos de prueba 1 a 4 del ejercicio 1.
+## 2026-09-08 — En conjunto (Julieta y Victoria) — En conjunto
+- Arreglamos error que teníamos en la prueba 10.in: nos habían quedado funciones con tipo int que le pasabamos un long, entonces cambiamos todo a long y se arregló.
+- Luego, al correr la prueba 200000.in, nos dimos cuenta que en la función RANGO, imprimía el mismo número dos veces porque era al mismo tiempo el desde y el hasta. Andan pruebas 10.in, 100.in y 200000.in.
