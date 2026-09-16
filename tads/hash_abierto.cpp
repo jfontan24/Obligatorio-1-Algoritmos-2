@@ -58,11 +58,16 @@ public:
 
   virtual void set(V value) override {
     long long pos = abs(this->h->hash(value)%this->largoArray);//ver si sacamos el modulo o no
+    std::cout<<"hash"<<this->h->hash(value)<<"pos"<<pos<<"value"<<value<<std::endl;
     ListImp<std::string> * l = this->array[pos];
     if (l == nullptr) {
          l = new ListImp<std::string>();  
-         this->cantidad++;     
+         this->cantidad++;
+         
+         this->array[pos]=l;    
     }
+    std::cout<<value<<"valor"<<std::endl;
+    std::cout<<pos<<"posicion"<<std::endl;
     l->insert(value);
     int tamanio = l->getSize();
     if(tamanio>this->maxPalabras){
@@ -74,6 +79,8 @@ public:
         long long pos = abs(this->h->hash(value)%this->largoArray);
         if(this->array[pos]==nullptr)return 0;
         long largo = (this->array[pos])->getSize();
+        
+        std::cout<<"largoArray"<<this->largoArray<<std::endl;
         return largo;
     }
        

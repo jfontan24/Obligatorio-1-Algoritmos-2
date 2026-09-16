@@ -13,7 +13,7 @@ int main()
     long cant;
     std::cin>>cant;
     std::cin.ignore();
-    Tabla<long,std::string>* t = new openedHashTable<long,std::string>(cant,new stringHash());
+    Tabla<long,std::string>* t = new openedHashTable<long,std::string>(cant+10,new stringHash());
     for(long i=0; i<cant; i++){
         std::string pal;
         std::getline(std::cin,pal);
