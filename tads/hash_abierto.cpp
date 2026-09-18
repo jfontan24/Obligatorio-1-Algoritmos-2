@@ -1,7 +1,7 @@
 #pragma once
-#include "ListImp.cpp"
 #include "Tabla.cpp"
 #include "../funciones/hashFunc.cpp"
+#include "ListaConFrecuencia.cpp"
 #include <assert.h>
 
 template <class K, class V> class openedHashTable : public Tabla<K, V> {
@@ -10,7 +10,7 @@ private:
   
 
   // bucket*[]
-  ListImp<std::string> **array;
+  ListaConFrecuencia<std::string> **array;
   long cantidad, capacidad, largoArray, maxPalabras;
   hashFunc<V> *h;
   float fc;
@@ -44,6 +44,22 @@ private:
 
     return x;
   }
+  std::string ordenar(std::string s){
+    long array[26] = {0};
+    for(long i=0; i<s.length(); i++){
+        long pos = s[i] - 97;
+        array[pos]++;
+    }
+    std::string cadena;
+    for(long i=0; i<26; i++){
+        for(long j=0; j<array[i]; j++){
+          char letra = i+97;
+          cadena+=letra;
+        }
+        
+    }
+    return cadena;
+  }
 
 public:
   openedHashTable(long capacidad, hashFunc<V> *h) {
@@ -51,37 +67,39 @@ public:
     this->capacidad = capacidad;
     this->fc = 0.0;
     this->largoArray = primoSup(capacidad);
-    this->array = new ListImp<std::string> *[largoArray]();
+    this->array = new ListaConFrecuencia<std::string> *[largoArray]();
     this->h = h;
     this->maxPalabras=0;
   }
 
   virtual void set(V value) override {
-    long long pos = abs(this->h->hash(value)%this->largoArray);//ver si sacamos el modulo o no
-    std::cout<<"hash"<<this->h->hash(value)<<"pos"<<pos<<"value"<<value<<std::endl;
-    ListImp<std::string> * l = this->array[pos];
+    std::string pal = ordenar(value);
+    long long pos = abs(this->h->hash(pal)%this->largoArray);
+    ListaConFrecuencia<std::string> * l = this->array[pos];
     if (l == nullptr) {
-         l = new ListImp<std::string>();  
+         l = new ListaConFrecuencia<std::string>();  
+         l->insert(pal,1);
          this->cantidad++;
-         
          this->array[pos]=l;    
+    }else{
+          int inserte = l->aumentarFrecuencia(pal);//aumentarFrecuencia lo inserta sino estaba ese bucket
+          if(inserte==1){
+            this->cantidad++;
+          }       
     }
-    std::cout<<value<<"valor"<<std::endl;
-    std::cout<<pos<<"posicion"<<std::endl;
-    l->insert(value);
-    int tamanio = l->getSize();
+    
+    int tamanio = l->getFrecuencia(pal);
     if(tamanio>this->maxPalabras){
         this->maxPalabras=tamanio;
     }
     
     }
     virtual long get(V value) override{
-        long long pos = abs(this->h->hash(value)%this->largoArray);
+        std::string pal = ordenar(value);
+        long long pos = abs(this->h->hash(pal)%this->largoArray);
         if(this->array[pos]==nullptr)return 0;
-        long largo = (this->array[pos])->getSize();
-        
-        std::cout<<"largoArray"<<this->largoArray<<std::endl;
-        return largo;
+        LiConFrecuencia<std::string> * l = this->array[pos];
+        return l->getFrecuencia(pal);
     }
        
   
@@ -90,3 +108,5 @@ public:
   virtual long getMax() override { return this->maxPalabras;}
   
 };
+
+//100 000, 10 000, ejemplo1, ejemplo2
