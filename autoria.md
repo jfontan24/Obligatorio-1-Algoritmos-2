@@ -14,7 +14,8 @@
     - https://www.geeksforgeeks.org/cpp/cin-in-c/
 
 ## Ejercicio 2
-- Implementación íntegramente propia, sin fuentes externas.
+- Codigo template de Tabla, has_abierto basado en el visto en clase. ListaConFecuencia basada en ListaImp incluida los archivos del obligatorio. Para el hash de las palabras utilizamos la funcion conocida de hash para strings llamada polynomial rolling hash function
+    - https://cp-algorithms.com/string/string-hashing.html
 
 ## Ejercicio 3
 - Implementación íntegramente propia, sin fuentes externas.

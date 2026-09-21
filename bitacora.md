@@ -19,6 +19,21 @@
 - Realizamos la prueba ejemplo1 y dio el resultado correcto.
 - Al realizar más pruebas nos dimos cuenta que nos habiamos olvidado del tamaño que podian tomar los numeros en el código de la moneda, usamos int y al ser números mas grandes todo se rompe (error out_of_range). Intentamos cambiar los ints por long long pero el error persiste. Queda pendiente resolver. Sospechamos que debe ser por ints que quedaron en el camino en otras funciones.
 
-## 2026-09-08 — En conjunto (Julieta y Victoria) — En conjunto
+## 2026-09-08 — En conjunto (Julieta y Victoria)
 - Arreglamos error que teníamos en la prueba 10.in: nos habían quedado funciones con tipo int que le pasabamos un long, entonces cambiamos todo a long y se arregló.
-- Luego, al correr la prueba 200000.in, nos dimos cuenta que en la función RANGO, imprimía el mismo número dos veces porque era al mismo tiempo el desde y el hasta. -Andan pruebas 10, 100, 1000, 10000, 100000, 200000, duplicados, ejemplo2, ejemplo3, ejemplo4, montonoCreciente, monotonoDecreciente, minimo, pocasLetras, monotonoPinturas, rangosAngostos, rangosVacios (todas).
+- Luego, al correr la prueba 200000.in, nos dimos cuenta que en la función RANGO, imprimía el mismo número dos veces porque era al mismo tiempo el desde y el hasta. 
+- Andan pruebas 10, 100, 1000, 10000, 100000, 200000, duplicados, ejemplo2, ejemplo3, ejemplo4, montonoCreciente, monotonoDecreciente, minimo, pocasLetras, monotonoPinturas, rangosAngostos, rangosVacios (todas).
+
+# 2026-09-10 — En conjunto (Julieta y Victoria) 
+
+# 2026-09-16 — En conjunto (Julieta y Victoria) 
+
+# 2026-09-18 — En conjunto (Julieta y Victoria) 
+- Terminamos el ejercicio 2 y comenzamos el ejercicio 3
+- Resolvimos mantener la misma funcion de hash que usabamos antes pero cambiando como almacenabamos las palabras en el hash. Pasamos de que cada bucket guardara todas las palabras a que cada bucket guarde la palabra ordenada y su frecuencia. Ejemplo: en lugar de guardar amor->roma->mora guardamos (amor,3). Esto permitio que palabras q aunque tienen distinto hash se guardan en el mismo bucket por cuestiones de dispersion no cambiaran el resultado (por ejemplo, perro se guardaba con amor y nos daba 3 en lugar de 0)
+- Pasamos de listas q guardaban un valor a listas q guardan un par valor-frecuencia
+- Pasamos de ordenar las palabras al hacer el hash a ordenarlas al hacer set o get para poder usar ese string en la comparacion dentro de la lista
+- Empezamos el ejercicio 3 planteando un min heap binario implementado con un array y comenzamos a definir las funciones de swap, flotar, hundir y pop
+
+# 2026-09-21 — Julieta 
+- Pasan pruebas de ejemplo 1 al 4, cajon gigante, cajon gigante repetidas, consultas ausentes, maximo, minimo, mismo largo, pocas letras, prefijo comun, suma igual, todas distintas

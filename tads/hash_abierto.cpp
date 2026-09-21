@@ -6,6 +6,8 @@
 
 template <class K, class V> class openedHashTable : public Tabla<K, V> {
 
+//template visto en clase
+
 private:
   
 
@@ -98,7 +100,7 @@ public:
         std::string pal = ordenar(value);
         long long pos = abs(this->h->hash(pal)%this->largoArray);
         if(this->array[pos]==nullptr)return 0;
-        LiConFrecuencia<std::string> * l = this->array[pos];
+        ListaConFrecuencia<std::string> * l = this->array[pos];
         return l->getFrecuencia(pal);
     }
        

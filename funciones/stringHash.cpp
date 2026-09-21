@@ -3,6 +3,7 @@
 #include "hashFunc.cpp"
 #include <string>
 
+//funcion de hash basada en el polynomial rolling hash function
 
 class stringHash : public hashFunc<std::string> {
   
