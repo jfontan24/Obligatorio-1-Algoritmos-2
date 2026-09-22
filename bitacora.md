@@ -22,3 +22,11 @@
 ## 2026-09-08 — En conjunto (Julieta y Victoria) — En conjunto
 - Arreglamos error que teníamos en la prueba 10.in: nos habían quedado funciones con tipo int que le pasabamos un long, entonces cambiamos todo a long y se arregló.
 - Luego, al correr la prueba 200000.in, nos dimos cuenta que en la función RANGO, imprimía el mismo número dos veces porque era al mismo tiempo el desde y el hasta. -Andan pruebas 10, 100, 1000, 10000, 100000, 200000, duplicados, ejemplo2, ejemplo3, ejemplo4, montonoCreciente, monotonoDecreciente, minimo, pocasLetras, monotonoPinturas, rangosAngostos, rangosVacios (todas).
+
+## 2026-09-10 — En conjunto (Julieta y Victoria) — En conjunto
+- Comenzamos con ejercicio2. Se nos ocurre que todos los anagramas vayan a parar al mismo bucket. Investigamos distintas funciones de hash. 
+## 2026-09-16 — En conjunto (Julieta y Victoria) — En conjunto
+- Pensamos que el problema por el cual no nos funcionan las pruebas es por la funcion de hash, entonces probamos con otras. 
+## 2026-09-18 — En conjunto (Julieta y Victoria) — En conjunto
+- Nos dimos cuenta que no podemos evitar que dos anagramas diferentes vayan al mismo bucket. Es por esto que decidimos ordenar la palabra, para que los anagramas sean la misma palabra y de esta manera, ver si dentro del bucket ya estaba o no. Sino estaba, se agrega y se suma un nuevo bucket, si estaba, se le suma uno mas a ese bucket. Pasan todas las pruebas.
+- Comenzamos a pensar el ejercicio 3, escribimos algunas funciones de minHeap como flotar y hundir. 
