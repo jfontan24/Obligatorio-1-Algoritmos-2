@@ -38,6 +38,6 @@
 
 # 2026-09-21 — Julieta 
 - Pasan pruebas de ejemplo 1 al 4, cajon gigante, cajon gigante repetidas, consultas ausentes, maximo, minimo, mismo largo, pocas letras, prefijo comun, suma igual, todas distintas
-- Luego, al correr la prueba 200000.in, nos dimos cuenta que en la función RANGO, imprimía el mismo número dos veces porque era al mismo tiempo el desde y el hasta. -Andan pruebas 10, 100, 1000, 10000, 100000, 200000, duplicados, ejemplo2, ejemplo3, ejemplo4, montonoCreciente, monotonoDecreciente, minimo, pocasLetras, monotonoPinturas, rangosAngostos, rangosVacios (todas).
+
 
 
