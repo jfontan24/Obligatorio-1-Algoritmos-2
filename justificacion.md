@@ -13,14 +13,18 @@
 - El RANGO tiene O(log(K)+R), siendo R la cantidad de piezas que esa consulta reporta y K la cantidad de piezas registradas en esa colección. /Justificación: cuando el dato (código) es mayor que hasta, menor que desde o igual a alguno de ellos, se deja de recorrer una de las ramas hijas, por eso O(log K). Pero como hay un caso en que se recorren ambas ramas, porque me encuentro dentro del intervalo, es O(R). Si sumo ambos, obtengo el orden requerido por la consigna: O(log(K)+R)
 
 ## Ejercicio 2
-- Sin restricciones de órdenes. / Justificación: ...
+
+- La letra exige O(L) promedio. Siendo L el largo de la palabra involucrada/ Justificación: el cálculo del hash se realiza en O(L) ya que se recorre la palabra. Luego, en hash_abierto.cpp, para ordenar la palabra se la reocorre denuevo (O(L)) y se recorre el arreglo generado O(26), lo cual es O(1). En getFrecuencia y setFrecuencia se recorre la lista en esa posición del arreglo (O(n)), siendo n la cantidad de elementos de la lista. Entonces queda O(L)+O(L)+O(n) => O(L). Asumo que O(max(L,n))=O(L).
 
 ## Ejercicio 3
+
 - Sin restricciones de órdenes. / Justificación: ...
 
 ## Ejercicio 4
+
 - Sin restricciones de órdenes. / Justificación: ...
 
 ## Ejercicio 5
+
 - Sin restricciones de órdenes. / Justificación: ...
 
