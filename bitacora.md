@@ -39,5 +39,5 @@
 # 2026-09-21 — Julieta 
 - Pasan pruebas de ejemplo 1 al 4, cajon gigante, cajon gigante repetidas, consultas ausentes, maximo, minimo, mismo largo, pocas letras, prefijo comun, suma igual, todas distintas
 
-
-
+# 2026-09-21 — Victoria
+- Pasan pruebas 10,100,1000,10000,100000
