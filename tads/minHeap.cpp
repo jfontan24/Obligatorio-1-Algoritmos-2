@@ -25,8 +25,9 @@ private:
         T hijo = this->arr[posActual];
         long posHijoIzq = 2*posActual;
         long posHijoDer = 2*posActual + 1;
-        if(posHijoIzq<=this->largo){
-            if(posHijoDer<=this->largo){
+        if(posHijoIzq<this->ultPos){
+            if(posHijoDer<this->ultPos){
+                if(this->arr[posActual]<=this->arr[posHijoIzq]&&this->arr[posActual]<=this->arr[posHijoDer])return;
                 if(this->arr[posHijoIzq]<=this->arr[posHijoDer]){
                     swap(posActual, posHijoIzq);
                     hundir(posHijoIzq);
@@ -35,11 +36,14 @@ private:
                     hundir(posHijoDer);
                 }
             }else{
+                
+                if(this->arr[posActual]<=this->arr[posHijoIzq])return;
                 swap(posActual, posHijoIzq);
                 hundir(posHijoIzq);
             }
         }else{
-            if(posHijoDer<=this->largo){
+            if(posHijoDer<this->ultPos){
+                if(this->arr[posActual]<=this->arr[posHijoDer])return;
                 swap(posActual, posHijoDer);
                 hundir(posHijoDer);
             }else{
@@ -70,7 +74,9 @@ public:
         swap(1,this->ultPos);
         this->arr[this->ultPos]=-1;//lo borramos
         this->ultPos--;
+
         hundir(1);
+        
     };
     virtual void consolidar()override{
         if(size()==1){
@@ -87,30 +93,37 @@ public:
                 if(hijoIzq<=hijoDer){
                     this->arr[2]=raiz+hijoIzq;
                     this->costo += raiz+hijoIzq;
-                    std::cout<<raiz<<","<<hijoIzq<<std::endl;  
+                    hundir(2);
+                    
+                      
                 }else{
                     this->arr[3]=raiz+hijoDer;
                     this->costo += raiz+hijoDer;
-                    std::cout<<raiz<<","<<hijoDer<<std::endl;
+                    hundir(3);
+                    
+                
                 }
             }else{
                 this->arr[2]=raiz+hijoIzq;
                 this->costo += raiz+hijoIzq;
-                std::cout<<raiz<<","<<hijoIzq<<std::endl;
+                hundir(2);
+                
             }
             
         }else{
             if(hijoDer!=-1){
                 this->arr[3]=raiz+hijoDer;
                 this->costo += raiz+hijoDer;
-                std::cout<<raiz<<","<<hijoDer<<std::endl;
+                hundir(3);
+                
+               
             }else{
                 return;
              }
             }
+        
         pop();
-
-        std::cout<<this->costo<<std::endl;
+        
         consolidar();
         
 
@@ -124,11 +137,5 @@ public:
     virtual long getCosto()override{
         return this->costo;
     }
-    virtual void imprimir()override{
-        std::cout<<"entreeee"<<std::endl;
-        for(int i=1;i<=size()+1;i++){
-
-            std::cout<<this->arr[i]<<std::endl;
-        }
-    }
+   
 };

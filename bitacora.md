@@ -41,3 +41,7 @@
 
 # 2026-09-21 — Victoria
 - Pasan pruebas 10,100,1000,10000,100000
+
+
+# 2026-09-22 — En conjunto (Julieta y Victoria) 
+- 10,100,1000,10000,100000,1000000,crecientes,creciemtesgrande

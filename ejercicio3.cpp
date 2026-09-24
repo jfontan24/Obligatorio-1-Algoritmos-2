@@ -16,9 +16,10 @@ int main()
         long nro;
         std::cin>>nro;
         h->push(nro);
+       
 
     }
-    h->imprimir();
+    
     h->consolidar();
     std::cout<<h->getCosto()<<std::endl;
     return 0;

@@ -8,5 +8,5 @@ public:
     virtual long size()=0;
     virtual bool isEmpty()=0;
     virtual long getCosto()=0;
-    virtual void imprimir()=0;
+    
 };
