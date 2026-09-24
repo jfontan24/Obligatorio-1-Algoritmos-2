@@ -83,48 +83,52 @@ public:
             this->costo=0;
             return;
         }
-        if(this->ultPos==1)return;
-        T raiz=this->arr[1];
-        T hijoIzq = this->arr[2];
-        T hijoDer = this->arr[3];
+        
+        while(this->ultPos!=1){
+            T raiz=this->arr[1];
+            T hijoIzq = this->arr[2];
+            T hijoDer = this->arr[3];
 
-        if(hijoIzq!=-1){
-            if(hijoDer!=-1){
-                if(hijoIzq<=hijoDer){
+            
+            if(hijoIzq!=-1){
+                if(hijoDer!=-1){
+                    if(hijoIzq<=hijoDer){
+                        this->arr[2]=raiz+hijoIzq;
+                        this->costo += raiz+hijoIzq;
+                        hundir(2);
+                        
+                        
+                    }else{
+                        this->arr[3]=raiz+hijoDer;
+                        this->costo += raiz+hijoDer;
+                        hundir(3);
+                        
+                    
+                    }
+                }else{
                     this->arr[2]=raiz+hijoIzq;
                     this->costo += raiz+hijoIzq;
                     hundir(2);
                     
-                      
-                }else{
+                }
+                
+            }else{
+                if(hijoDer!=-1){
                     this->arr[3]=raiz+hijoDer;
                     this->costo += raiz+hijoDer;
                     hundir(3);
                     
                 
+                }else{
+                    return;
                 }
-            }else{
-                this->arr[2]=raiz+hijoIzq;
-                this->costo += raiz+hijoIzq;
-                hundir(2);
-                
-            }
+                }
             
-        }else{
-            if(hijoDer!=-1){
-                this->arr[3]=raiz+hijoDer;
-                this->costo += raiz+hijoDer;
-                hundir(3);
-                
-               
-            }else{
-                return;
-             }
-            }
+            pop();
+        }
         
-        pop();
         
-        consolidar();
+       
         
 
     }

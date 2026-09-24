@@ -42,6 +42,10 @@
 # 2026-09-21 — Victoria
 - Pasan pruebas 10,100,1000,10000,100000
 
-
 # 2026-09-22 — En conjunto (Julieta y Victoria) 
-- 10,100,1000,10000,100000,1000000,crecientes,creciemtesgrande
+- Hicimos las funciones del minHeap consolidar, size y getCosto, además del main (ejercicio3.cpp)
+
+# 2026-09-24 — En conjunto (Julieta y Victoria) 
+- Ejemplo 1 pasa la prueba
+- Nos daba distinto el 10.out de nuestra salida, nos dimos cuenta que era porque no hundía el resultado de la consolidación y le hacía swap directo a la raíz. Como el arbol no quedaba consistente, no daba bien la prueba.
+- Andan pruebas 10,100,1000,10000,100000,1000000,crecientes,crecientesgrande,1000000. Cambiamos la función consolidar de recursiva a iterativa porque nos daba segmentation fault en la prueba 1000000, faltaría chequear más adelante denuevo las otras pruebas anteriores al 1000000, que anduvieron con la versión recursiva de consolidar.
