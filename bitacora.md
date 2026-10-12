@@ -58,4 +58,5 @@
 - Implementamos el grafo. Decidimos que vamos a usar orden topológico y que el heap se utilizará en el algoritmo del orden topológico en vez de la cola. Tendremos un arreglo auxiliar que vincule el nro del grafo(pos del arreglo) con la proridad. Tendremos un tipo modulo, que va a guardar el nro de vertice y su prioridad correspondiente. El heap va a ser de tipo modulo. Como ya tenemos un heap binario genérico de otro ejercicio, vamos a utilizarlo. Nos damos cuenta que tiene función consolidar como propia de un heap binario y esto no es correcto, entonces dejamos planteado para la próxima sacar esta función para que deje de ser propia del heap. Vamos a pensar la función consolidar fuera de la implementación del TAD del heap binario y utilizando sus funciones, ya que esto es lo que corresponde.
 
 # 2026-10-12 - En conjunto (Julieta y Victoria)
+- corregimos que consolidar este en el main del ejercicio3.cpp, anda prueba 10.in
 - 

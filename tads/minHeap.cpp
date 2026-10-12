@@ -14,6 +14,7 @@ private:
         this->arr[posHijo]=aux;
     }
     void flotar(long posActual){
+        if(posActual <= 1)return;
         T padre = this->arr[posActual/2];
         T hijo = this->arr[posActual];
         if(padre<=hijo)return;
@@ -25,8 +26,8 @@ private:
         T hijo = this->arr[posActual];
         long posHijoIzq = 2*posActual;
         long posHijoDer = 2*posActual + 1;
-        if(posHijoIzq<this->ultPos){
-            if(posHijoDer<this->ultPos){
+        if(posHijoIzq<=this->ultPos){
+            if(posHijoDer<=this->ultPos){
                 if(this->arr[posActual]<=this->arr[posHijoIzq]&&this->arr[posActual]<=this->arr[posHijoDer])return;
                 if(this->arr[posHijoIzq]<=this->arr[posHijoDer]){
                     swap(posActual, posHijoIzq);
@@ -42,7 +43,7 @@ private:
                 hundir(posHijoIzq);
             }
         }else{
-            if(posHijoDer<this->ultPos){
+            if(posHijoDer<=this->ultPos){
                 if(this->arr[posActual]<=this->arr[posHijoDer])return;
                 swap(posActual, posHijoDer);
                 hundir(posHijoDer);
@@ -62,6 +63,7 @@ public:
 
     //insertamos al final y flotamos
     virtual void push(T elem)override{
+        if(this->ultPos >= this->largo)return;
         arr[this->ultPos+1]=elem;
         this->ultPos++;
         flotar(ultPos);
@@ -71,8 +73,9 @@ public:
         return this->arr[1];
     }
     virtual void pop() override{
+        if(isEmpty())return;
         swap(1,this->ultPos);
-        this->arr[this->ultPos]=-1;//lo borramos
+        //this->arr[this->ultPos]=-1;//lo borramos
         this->ultPos--;
 
         hundir(1);
@@ -134,13 +137,13 @@ public:
 
     
     virtual long size() override{
-        return this->largo;
+        return this->ultPos;
     }
     virtual bool isEmpty() override{
         return size()==0;
     }
-    virtual long getCosto()override{
+    /*virtual long getCosto()override{
         return this->costo;
-    }
+    }*/
    
 };
