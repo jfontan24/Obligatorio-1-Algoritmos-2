@@ -21,6 +21,24 @@ private:
     Node *head;
     Node *tail;
     int size;
+    class arrListIterator:public iterator<T>{
+    private:
+        Node* actual;
+    public:
+        arrListIterator(Node* head){
+        this->actual = head;
+        }
+
+        virtual bool hasNext() override{
+            return this->actual == this->tail;
+        }
+        virtual T next() override{
+            T elem = this->actual->element;
+            return elem;
+        }
+    };
+
+
 
 public:
     ListImp() : head(nullptr), size(0) {}
@@ -162,6 +180,10 @@ public:
     {
         return size;
     }
+    virtual iterator<T>* getIterator()override{
+        return new arrListIterator(this->head);
+    }
+
 };
 
 #endif

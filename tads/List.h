@@ -1,8 +1,8 @@
 #ifndef LIST_H
 #define LIST_H
-
+#include "iterator.cpp"
 template <class T>
-class List
+class List: public iterable<T>
 {
 public:
     // pre:
@@ -32,6 +32,12 @@ public:
     // pre: -
     // post: returns the size of the list
     virtual int getSize() = 0;
+
+    //pre: -
+    //post: returns iterator of the list
+    virtual iterator<T>* getIterator()=0;
+
+
 };
 
 #endif

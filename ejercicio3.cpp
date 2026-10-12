@@ -6,6 +6,13 @@
 
 using namespace std;
 
+void consolidar(HeapBinario<long>* h){
+    int primero = h->top();
+    h->pop();
+    int segundo = h->top();
+    h->pop();
+    h->push(primero+segundo);
+}
 int main()
 {
     long cant;
@@ -16,11 +23,9 @@ int main()
         long nro;
         std::cin>>nro;
         h->push(nro);
-       
-
     }
-    
-    h->consolidar();
-    std::cout<<h->getCosto()<<std::endl;
+    //h->consolidar();
+    consolidar(h);
+    std::cout<<(h->top())->getCosto()<<std::endl;
     return 0;
 }

@@ -78,6 +78,7 @@ public:
         hundir(1);
         
     };
+    /*
     virtual void consolidar()override{
         if(size()==1){
             this->costo=0;
@@ -128,10 +129,10 @@ public:
         }
         
         
-       
-        
+} 
+    */
 
-    }
+    
     virtual long size() override{
         return this->largo;
     }
