@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #include "Tabla.cpp"
 #include "../funciones/hashFunc.cpp"
 #include "ListaConFrecuencia.cpp"

@@ -9,6 +9,8 @@ struct edge{
         this->to = to;
         this->weight = weight;
     }
+    
+    bool operator==(const edge &other) { return (this->from == other.from) && (this->to == other.to); }
 };
 class Grafo{
 public:

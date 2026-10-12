@@ -30,7 +30,7 @@ private:
         }
 
         virtual bool hasNext() override{
-            return this->actual == this->tail;
+            return (this->actual)->next == nullptr;
         }
         virtual T next() override{
             T elem = this->actual->element;

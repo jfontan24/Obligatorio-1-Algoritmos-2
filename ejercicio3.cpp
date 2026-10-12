@@ -26,7 +26,7 @@ int main()
     long cant;
     std::cin>>cant;
     cin.ignore();
-    HeapBinario<long>* h = new minHeap<long>(cant, 0);
+    HeapBinario<long>* h = new minHeap<long>(cant);
     for(int i=1; i<=cant;i++){
         long nro;
         std::cin>>nro;

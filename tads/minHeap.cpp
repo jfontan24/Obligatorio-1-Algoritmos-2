@@ -5,7 +5,6 @@ template <class T> class minHeap: public HeapBinario<T>{
 private:
     T *arr;
     long largo;
-    long costo;
     long ultPos;
 
     void swap(long posHijo, long posPadre){
@@ -54,9 +53,8 @@ private:
         
     }
 public:
-    minHeap(long largo, long costo){
-        this->arr= new long[largo+1];
-        this->costo = costo;
+    minHeap(long largo){
+        this->arr= new T[largo+1];
         this->ultPos=0;
         this->largo = largo;
     }
@@ -81,59 +79,7 @@ public:
         hundir(1);
         
     };
-    /*
-    virtual void consolidar()override{
-        if(size()==1){
-            this->costo=0;
-            return;
-        }
-        
-        while(this->ultPos!=1){
-            T raiz=this->arr[1];
-            T hijoIzq = this->arr[2];
-            T hijoDer = this->arr[3];
 
-            
-            if(hijoIzq!=-1){
-                if(hijoDer!=-1){
-                    if(hijoIzq<=hijoDer){
-                        this->arr[2]=raiz+hijoIzq;
-                        this->costo += raiz+hijoIzq;
-                        hundir(2);
-                        
-                        
-                    }else{
-                        this->arr[3]=raiz+hijoDer;
-                        this->costo += raiz+hijoDer;
-                        hundir(3);
-                        
-                    
-                    }
-                }else{
-                    this->arr[2]=raiz+hijoIzq;
-                    this->costo += raiz+hijoIzq;
-                    hundir(2);
-                    
-                }
-                
-            }else{
-                if(hijoDer!=-1){
-                    this->arr[3]=raiz+hijoDer;
-                    this->costo += raiz+hijoDer;
-                    hundir(3);
-                    
-                
-                }else{
-                    return;
-                }
-                }
-            
-            pop();
-        }
-        
-        
-} 
-    */
 
     
     virtual long size() override{
