@@ -49,3 +49,13 @@
 - Ejemplo 1 pasa la prueba
 - Nos daba distinto el 10.out de nuestra salida, nos dimos cuenta que era porque no hundía el resultado de la consolidación y le hacía swap directo a la raíz. Como el arbol no quedaba consistente, no daba bien la prueba.
 - Andan pruebas 10,100,1000,10000,100000,1000000,crecientes,crecientesgrande,1000000. Cambiamos la función consolidar de recursiva a iterativa porque nos daba segmentation fault en la prueba 1000000, faltaría chequear más adelante denuevo las otras pruebas anteriores al 1000000, que anduvieron con la versión recursiva de consolidar.
+
+# 2026-10-08 - En conjunto (Julieta y Victoria)
+- Hicimos la parte de tomar los datos del input del ejercicio4.cpp
+- Discutimos sobre diferentes implementaciones, queda pendiente determinar como utilizaremos el heap. Definimos la clase abstracta del grafo. Decidimos que el grafo va a ser implementado conlista de adyacencia por el orden espacial que se exige
+
+# 2026-10-09 - En conjunto (Julieta y Victoria)
+- Implementamos el grafo. Decidimos que vamos a usar orden topológico y que el heap se utilizará en el algoritmo del orden topológico en vez de la cola. Tendremos un arreglo auxiliar que vincule el nro del grafo(pos del arreglo) con la proridad. Tendremos un tipo modulo, que va a guardar el nro de vertice y su prioridad correspondiente. El heap va a ser de tipo modulo. Como ya tenemos un heap binario genérico de otro ejercicio, vamos a utilizarlo. Nos damos cuenta que tiene función consolidar como propia de un heap binario y esto no es correcto, entonces dejamos planteado para la próxima sacar esta función para que deje de ser propia del heap. Vamos a pensar la función consolidar fuera de la implementación del TAD del heap binario y utilizando sus funciones, ya que esto es lo que corresponde.
+
+# 2026-10-12 - En conjunto (Julieta y Victoria)
+- 
