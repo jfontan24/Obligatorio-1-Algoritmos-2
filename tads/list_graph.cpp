@@ -30,12 +30,10 @@ public:
         assert(weight!=0);//que el costo no sea 0
 
         edge newEdge = edge(v,w,weight);
-        listArr[v]->remove(newEdge);
         listArr[v]->insert(newEdge);
 
         if(!this->isDirected){
             edge newEdge = edge(w,v,weight);
-            listArr[v]->remove(newEdge);
             listArr[v]->insert(newEdge);
         }
 
@@ -80,17 +78,8 @@ public:
         }
         return mat;
     }
-
-    virtual void  imprimir() override{
-        for(int i = 1; i<= vertices; i++){
-            this->listArr[i]->imprimir();
-        }
-
-    }
-
-
-    /*
-    virtual int64_t V()override{
+    
+    virtual int64_t cantVertices ()override{
         return this->vertices;
-    };*/
+    }
 };

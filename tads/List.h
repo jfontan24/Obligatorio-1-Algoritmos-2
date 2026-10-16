@@ -37,7 +37,7 @@ public:
     //post: returns iterator of the list
     virtual iterator<T>* getIterator()=0;
 
-    virtual void imprimir()=0;
+
 
 
 };

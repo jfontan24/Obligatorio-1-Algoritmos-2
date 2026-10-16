@@ -3,7 +3,6 @@
 
 #include "List.h"
 #include <cassert>
-#include <iostream>
 
 template <class T>
 class ListImp : public List<T>
@@ -187,13 +186,7 @@ public:
         return new arrListIterator(this->head);
     }
 
-    virtual void imprimir() override{
-        Node * aux = this->head;
-        while(aux->next != nullptr){
-            std::cout<<aux->element.from<<" "<<aux->element.to<<std::endl;
-            aux=aux->next;
-        }
-    }
+
 };
 
 #endif
