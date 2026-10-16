@@ -3,6 +3,7 @@
 
 #include "List.h"
 #include <cassert>
+#include <iostream>
 
 template <class T>
 class ListImp : public List<T>
@@ -30,10 +31,11 @@ private:
         }
 
         virtual bool hasNext() override{
-            return (this->actual)->next != nullptr;
+            return (this->actual) != nullptr;
         }
         virtual T next() override{
             T elem = this->actual->element;
+            this->actual = this->actual->next;
             return elem;
         }
     };
@@ -180,10 +182,18 @@ public:
     {
         return size;
     }
+
     virtual iterator<T>* getIterator()override{
         return new arrListIterator(this->head);
     }
 
+    virtual void imprimir() override{
+        Node * aux = this->head;
+        while(aux->next != nullptr){
+            std::cout<<aux->element.from<<" "<<aux->element.to<<std::endl;
+            aux=aux->next;
+        }
+    }
 };
 
 #endif

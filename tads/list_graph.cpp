@@ -33,7 +33,7 @@ public:
         listArr[v]->remove(newEdge);
         listArr[v]->insert(newEdge);
 
-        if(this->isDirected){
+        if(!this->isDirected){
             edge newEdge = edge(w,v,weight);
             listArr[v]->remove(newEdge);
             listArr[v]->insert(newEdge);
@@ -55,7 +55,7 @@ public:
     };*/
     virtual iterator<edge> *getAllEdges()override{
         List<edge>* collection = new ListImp<edge>();
-        for(int64_t i=1;i<this->vertices;i++){
+        for(int64_t i=1;i<=this->vertices;i++){
             iterator<edge>* it = this->listArr[i]->getIterator();
             while(it->hasNext()){
                 collection->insert(it->next());
@@ -80,6 +80,15 @@ public:
         }
         return mat;
     }
+
+    virtual void  imprimir() override{
+        for(int i = 1; i<= vertices; i++){
+            this->listArr[i]->imprimir();
+        }
+
+    }
+
+
     /*
     virtual int64_t V()override{
         return this->vertices;

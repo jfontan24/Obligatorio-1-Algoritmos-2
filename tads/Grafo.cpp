@@ -19,5 +19,6 @@ public:
     virtual iterator<edge> *getNeighbours(int64_t v)=0;
     virtual int64_t** adjMatrix()=0;
     virtual iterator<edge> *getAllEdges()=0;
+    virtual void imprimir()=0;
     
 };

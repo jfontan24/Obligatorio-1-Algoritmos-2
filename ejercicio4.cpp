@@ -13,8 +13,7 @@
 
 int64_t* initRet(int64_t cantModulos){
     int64_t* ret = new int64_t[cantModulos+1];
-    ret[0]=-1;
-    for(int64_t i=1; i<=cantModulos; i++){
+    for(int64_t i=0; i<=cantModulos; i++){
         ret[i]=0;
     }
     return ret;
@@ -39,7 +38,6 @@ int64_t* ordenacionTopologica(Grafo* g, int64_t cantModulos, int64_t* arrPrio){
         if(gradosEntrada[i]==0){
             modulo m = modulo(i,arrPrio[i]);
             h->push(m);
-            std::cout<<"meti en el heap! "<<m.nroVertice<<" "<<m.prio<<std::endl;
         }
     }
     int64_t cant = 0;
@@ -82,13 +80,13 @@ int main()
         std::cin.ignore();
         
     }
-    
-    for(int64_t i; i<cantPreced; i++){
+    for(int64_t i=0; i<cantPreced; i++){
         int64_t v;
         int64_t w;
         std::cin>>v>>w;
         g->addEdge(v,w);
     }
+    
     int64_t* orden = ordenacionTopologica(g, cantModulos, arrPrioridad);
     if(orden[0]==-1){
         std::cout<<"imposible"<<std::endl;
