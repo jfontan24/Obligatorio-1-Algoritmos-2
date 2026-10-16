@@ -26,11 +26,11 @@ private:
         Node* actual;
     public:
         arrListIterator(Node* head){
-        this->actual = head;
+            this->actual = head;
         }
 
         virtual bool hasNext() override{
-            return (this->actual)->next == nullptr;
+            return (this->actual)->next != nullptr;
         }
         virtual T next() override{
             T elem = this->actual->element;
