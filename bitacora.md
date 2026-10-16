@@ -55,8 +55,14 @@
 - Discutimos sobre diferentes implementaciones, queda pendiente determinar como utilizaremos el heap. Definimos la clase abstracta del grafo. Decidimos que el grafo va a ser implementado conlista de adyacencia por el orden espacial que se exige
 
 # 2026-10-09 - En conjunto (Julieta y Victoria)
-- Implementamos el grafo. Decidimos que vamos a usar orden topológico y que el heap se utilizará en el algoritmo del orden topológico en vez de la cola. Tendremos un arreglo auxiliar que vincule el nro del grafo(pos del arreglo) con la proridad. Tendremos un tipo modulo, que va a guardar el nro de vertice y su prioridad correspondiente. El heap va a ser de tipo modulo. Como ya tenemos un heap binario genérico de otro ejercicio, vamos a utilizarlo. Nos damos cuenta que tiene función consolidar como propia de un heap binario y esto no es correcto, entonces dejamos planteado para la próxima sacar esta función para que deje de ser propia del heap. Vamos a pensar la función consolidar fuera de la implementación del TAD del heap binario y utilizando sus funciones, ya que esto es lo que corresponde.
+- Implementamos el grafo. Decidimos que vamos a usar orden topológico y que el heap se utilizará en el algoritmo del orden topológico. Tendremos un arreglo auxiliar que vincule el nro del grafo(pos del arreglo) con la proridad. Tendremos un tipo modulo, que va a guardar el nro de vertice y su prioridad correspondiente. El heap va a ser de tipo modulo. Como ya tenemos un heap binario genérico de otro ejercicio, vamos a utilizarlo. Nos damos cuenta que tiene función consolidar como propia de un heap binario y esto no es correcto, entonces dejamos planteado para la próxima sacar esta función para que deje de ser propia del heap. Vamos a pensar la función consolidar fuera de la implementación del TAD del heap binario y utilizando sus funciones, ya que esto es lo que corresponde.
+- El grafo lo implementamos con lista de adyacencia y utilizamos la ListImp que se nos dio. La modificamos a esta y su clase abstracta para que tengan un iterador.
+- Escribimos el código para tomar los datos del input.
 
 # 2026-10-12 - En conjunto (Julieta y Victoria)
 - corregimos que consolidar este en el main del ejercicio3.cpp, anda prueba 10.in
-- 
+- escribimos el algoritmo de orden topológico, creamos el tipo módulo
+- compila pero nos da segmentation fault, resolvemos la próxima
+
+# 2026-10-16 - Victoria
+- andan pruebas 100, 1000, 10000, 100000, 1000000, crecientes, decrecientes, dos_valores, ejemplo1, ejemplo2, ejemplo3
