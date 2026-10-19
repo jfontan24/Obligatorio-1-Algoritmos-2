@@ -11,7 +11,7 @@ struct modulo{
     
     bool operator<(const modulo &other) { return (this->prio < other.prio) || ((this->prio == other.prio) && (this->nroVertice < other.nroVertice)); }
     bool operator>(const modulo &other) { return (this->prio > other.prio) || ((this->prio == other.prio) && (this->nroVertice > other.nroVertice)); }
-    bool operator<=(const modulo &other) { return this->prio <= other.prio; }
-    bool operator>=(const modulo &other) { return this->prio >= other.prio; }
+    bool operator<=(const modulo &other) { return (this->prio < other.prio) || ((this->prio == other.prio) && (this->nroVertice < other.nroVertice)); }
+    bool operator>=(const modulo &other) { return (this->prio > other.prio) || ((this->prio == other.prio) && (this->nroVertice > other.nroVertice));}
     bool operator==(const modulo &other) { return (this->prio == other.prio) && (this->nroVertice == other.nroVertice); }
 };

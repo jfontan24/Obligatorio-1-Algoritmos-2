@@ -66,3 +66,6 @@
 
 # 2026-10-16 - Victoria
 - andan pruebas 100, 1000, 10000, 100000, 1000000, crecientes, decrecientes, dos_valores, ejemplo1, ejemplo2, ejemplo3
+
+# 2026-10-18 - Julieta
+- andan pruebas 10, 100, 1000, 10000, 100000, cadena, ciclo mínimo, ciclo parcial, ejemplo1, ejemplo2, ejemplo3, ejemplo4, ejemplo5, fifo_distinto, máximo, mínimo, minimo_lineal, prioridades iguales del ejercicio 4
