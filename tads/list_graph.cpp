@@ -3,6 +3,9 @@
 #include <cassert>
 #include "ListImp.cpp"
 #include <stdint.h>
+
+//basado en el codigo visto en clase
+
 class list_graph:public Grafo{
 private:
     int64_t vertices;
@@ -38,19 +41,7 @@ public:
         }
 
     };
-    /*
-    virtual void removeEdge(int64_t v, int64_t w)override{
-        assert(false);
-    };
-    virtual void removeAllEdges(int64_t v)override{
-        assert(false);
-    };
-    virtual bool hasEdge(int64_t v, int64_t w)override{
-        assert(false);
-    };
-    virtual edge getEdge(int64_t v,int64_t w)override{
-        assert(false);
-    };*/
+
     virtual iterator<edge> *getAllEdges()override{
         List<edge>* collection = new ListImp<edge>();
         for(int64_t i=1;i<=this->vertices;i++){

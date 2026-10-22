@@ -75,8 +75,6 @@ int main()
     for(int64_t i=1; i<=cantModulos; i++){
         std::cin>>nro;
         arrPrioridad[i]= std::stoll(nro);
-        //std::cadena;
-        //std::getLine(std::cin,cadena);
         std::cin.ignore();
         
     }

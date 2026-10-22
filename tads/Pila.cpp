@@ -28,7 +28,7 @@ class Pila {
     }
 
     int top() {
-        if (esVacia()) return 0;//xq lo tengo que poner si una pre es que p no es vacio??
+        if (esVacia()) return 0;
         return this->ultimo->dato;
     }
 
@@ -38,7 +38,7 @@ class Pila {
         this->ultimo = this->ultimo->sig;
         delete aBorrar;
         aBorrar = nullptr;
-        this->cant--;//OJO: me faltaba
+        this->cant--;
     }
 
 

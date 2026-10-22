@@ -1,3 +1,5 @@
+//basado en el codigo visto en clase
+
 #include <cstdint>
 
 class MFSet{

@@ -32,7 +32,6 @@ int main()
         std::cin>>nro;
         h->push(nro);
     }
-    //h->consolidar();
     long costo = consolidar(h);
     std::cout<<costo<<std::endl;
     return 0;

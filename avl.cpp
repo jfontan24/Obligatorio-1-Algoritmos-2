@@ -49,7 +49,7 @@ private: // lo pongo para aclarar
         z->right = y_l;
         y->left = z;
 
-        //es importante que llame primero a z no?
+        
         z->height = 1+ max(height(z->left),(height(z->right)));
         y->height = 1+ max(height(y->left),(height(y->right)));
         return y;
@@ -102,13 +102,7 @@ private: // lo pongo para aclarar
         }
         return true;
     }
-    //desde hasta
-    //mayor q el hasta, hacia la izquierda
-    //menor q el desde,  hacia la derecha
-    
-    //cuandp es igual al hasta, solo para la izqy lo imprimo
-    
-    //mayor que el desde y menor que el hasta, me voy para los dos
+  
     void range(node *n, T desde, T hasta){
         if(n==nullptr)return;
         if(n->data>hasta){

@@ -1,6 +1,8 @@
 #pragma once
 #include "HeapBinario.cpp"
 
+//basado en el codigo visto en clase
+
 template <class T> class minHeap: public HeapBinario<T>{
 private:
     T *arr;
@@ -73,7 +75,6 @@ public:
     virtual void pop() override{
         if(isEmpty())return;
         swap(1,this->ultPos);
-        //this->arr[this->ultPos]=-1;//lo borramos
         this->ultPos--;
 
         hundir(1);
@@ -88,8 +89,6 @@ public:
     virtual bool isEmpty() override{
         return size()==0;
     }
-    /*virtual long getCosto()override{
-        return this->costo;
-    }*/
+
    
 };

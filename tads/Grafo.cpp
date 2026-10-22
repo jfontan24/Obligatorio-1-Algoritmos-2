@@ -2,6 +2,8 @@
 #include "iterator.cpp"
 #include <cstdint>
 
+//basado en el codigo visto en clase
+
 struct edge{
     int64_t from,to,weight;
     edge(){};
