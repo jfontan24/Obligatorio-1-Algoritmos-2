@@ -20,4 +20,4 @@
 - Código de MFSet basado en el visto en clase
 
 
-Al realizar las pruebas de los ejercicios nos encontramos con errores como segmentation fault o bad alloc. Se utilizó Claude para encontrar el origen de los errores en casos puntuales y se pidieron potenciales soluciones para resolverlo. Nunca se pidió explicitamente código para resolver un ejercicio, y cuando se pidieron soluciones no se copió y pego directo en nuestro código, solo lo usamos para ver donde estaba el error y nosotras escribimos las corregiones de manera que nos hiciera sentido adaptandolo a nuestro código.
+Al realizar las pruebas de los ejercicios nos encontramos con errores como segmentation fault o bad alloc. Se utilizó Claude para encontrar el origen de los errores en casos puntuales y se pidieron potenciales soluciones para resolverlo. Nunca se pidió explicitamente código para resolver un ejercicio, y cuando se pidieron soluciones no se copió y pego directo en nuestro código, solo lo usamos para ver donde estaba el error y nosotras escribimos las correcciones de manera que nos hiciera sentido adaptandolo a nuestro código.
