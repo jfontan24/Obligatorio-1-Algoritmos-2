@@ -78,3 +78,7 @@
 - andan pruebas 10, 100, 1000, 10000, 100000, arbol, ciclos_baratos, desconexo_grande, dos_componentes, dos_refugios, dsu_cadena, ejemplo1, ejemplo2, ejemplo3, ejemplo4, ejemplo5, maximo, paralelas, sin_senderos, todos_iguales, un_refugio de ejercicio5
 - dsu_inverso dio imposible y tendría que haber dado un número !!!
 - andan ejemplo4, ejemplo5, maximo, minimo, todos_iguales del ejercicio3.
+
+# 2026-10-22
+- arreglamos que en la arista inversa  se agregaba cuando el grafo es no dirigido, se estaba insertando en la lista de destino y no del origen. Por ejemplo: si tengo arista 1->2, inserto el 2 en la lista del 1 y agrego la arista inversa 2->1 que es agregar el 1 en la lista del 2. Nosotras estabamos agregando ambas a la lista 1.
+- anda prueba dsu_cadena_inversa del ejercicio5

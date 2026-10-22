@@ -26,5 +26,5 @@
 
 ## Ejercicio 5
 
-- Sin restricciones de órdenes. / Justificación: ...
+- La letra exige O(Elog(E)) temporal, siendo E la cantidad de senderos y O(V+E) espacial, siendo V la cantiddad de refugios. / Justificación: el kruskal utiliza mfset con dos optimizaciones: union by rank y path compression. Sin utilizar ninguna optimización, puede degenerar en una lista, cuando todos se encuentran en el mismo conjunto. Al utilizar union by rank se garantiza que los árboles permanezcan relativamente planos, porque se le asigna al de menor altura estimada el representante del conjunto con mayor altura estimada. Entonces, queda el merge de O(log n)
 

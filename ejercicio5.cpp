@@ -38,6 +38,7 @@ void DFS(Grafo* g, bool* &visitados, int64_t origen){
         iterator<edge>* it = g->getNeighbours(v);
         while(it->hasNext()){
             edge e = it->next();
+            
             if(!visitados[e.to]){
                 visitados[e.to] = true;
                 p->push(e.to);
@@ -57,6 +58,7 @@ bool esConexa(Grafo* g){
     bool esConexa = true;
     for (int i = 1; i<=g->cantVertices() && esConexa; i++) {
         esConexa = esConexa && vistados[i];
+        
     }
     return esConexa;
 }

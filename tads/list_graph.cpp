@@ -36,8 +36,8 @@ public:
         listArr[v]->insert(newEdge);
 
         if(!this->isDirected){
-            edge newEdge = edge(w,v,weight);
-            listArr[v]->insert(newEdge);
+            edge nuevaArista = edge(w,v,weight);
+            listArr[w]->insert(nuevaArista);
         }
 
     };
