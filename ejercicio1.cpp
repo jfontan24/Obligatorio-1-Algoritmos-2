@@ -2,8 +2,8 @@
 #include <string>
 #include <iostream>
 #include <limits>
-#include "avl.cpp"
-#include "bst.cpp"
+#include "tads/avl.cpp"
+#include "tads/bst.cpp"
 
 //using namespace std; no tendriamos que sacarlo??
 

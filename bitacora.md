@@ -65,7 +65,16 @@
 - compila pero nos da segmentation fault, resolvemos la próxima
 
 # 2026-10-16 - Victoria
-- andan pruebas 100, 1000, 10000, 100000, 1000000, crecientes, decrecientes, dos_valores, ejemplo1, ejemplo2, ejemplo3
+- andan pruebas 100, 1000, 10000, 100000, 1000000, crecientes, decrecientes, dos_valores, ejemplo1, ejemplo2, ejemplo3 del ejercicio3
+
+# 2026-10-16 -En conjunto (Julieta y Victoria)
+- realizamos ejercicio 5. La idea es primero fijarnos si el grafo es conexo, o sea, si de caulquier refugio se pueden llegar a los demás. Esto lo realizamos con DFS y si nos da que no es conexo entonces es imposible y si no utilizamos kruskal. Kruskal utiliza un minHeap que tiene las aristas ordenadas por menor peso y MFset implementado con las dos optimizaciones. Si el origen y el destino de una arista estaban en distintos conjuntos, hacemos merge y vamos sumando el costo. No nos interesa en este caso el árbol de cubrimiento mínimo si no que el costo mínimo, es eso lo que retornamos.
+- para DFS utilizamos una pila porque el recursivo nos trajo problemas
 
 # 2026-10-18 - Julieta
 - andan pruebas 10, 100, 1000, 10000, 100000, cadena, ciclo mínimo, ciclo parcial, ejemplo1, ejemplo2, ejemplo3, ejemplo4, ejemplo5, fifo_distinto, máximo, mínimo, minimo_lineal, prioridades iguales del ejercicio 4
+
+# 2026-10-21 - Victoria
+- andan pruebas 10, 100, 1000, 10000, 100000, arbol, ciclos_baratos, desconexo_grande, dos_componentes, dos_refugios, dsu_cadena, ejemplo1, ejemplo2, ejemplo3, ejemplo4, ejemplo5, maximo, paralelas, sin_senderos, todos_iguales, un_refugio de ejercicio5
+- dsu_inverso dio imposible y tendría que haber dado un número !!!
+- andan ejemplo4, ejemplo5, maximo, minimo, todos_iguales del ejercicio3.
