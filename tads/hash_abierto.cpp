@@ -5,7 +5,7 @@
 #include "ListaConFrecuencia.cpp"
 #include <assert.h>
 
-template <class K, class V> class openedHashTable : public Tabla<K, V> {
+template <class V> class openedHashTable : public Tabla<V> {
 
 //template visto en clase
 
