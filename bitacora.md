@@ -26,9 +26,11 @@
 
 ## 2026-09-10 — En conjunto (Julieta y Victoria) — En conjunto
 - Comenzamos con ejercicio2. Se nos ocurre que todos los anagramas vayan a parar al mismo bucket. Investigamos distintas funciones de hash y utilizamos una. Tomamos la implementación de tabla de la clase y la modificamos.
+
 ## 2026-09-16 — En conjunto (Julieta y Victoria) — En conjunto
 - Solucionamos que en la salida de las pruebas aparecía todo en 0, esto era porque a la posición correspondiente del arreglo no le estabamos asignando la lista. 
 - Pensamos que el problema por el cual no nos funcionan las pruebas es por la función de hash, entonces probamos con otra.
+
 # 2026-09-18 — En conjunto (Julieta y Victoria) 
 - Terminamos el ejercicio 2 y comenzamos el ejercicio 3
 - Resolvimos mantener la misma función de hash que usabamos antes, pero cambiando como almacenabamos las palabras en el hash. Pasamos de que cada bucket guardara todas las palabras a que cada bucket guarde la palabra ordenada y su frecuencia. Ejemplo: en lugar de guardar amor->roma->mora guardamos (amor,3). Esto permitió que palabras que aunque tienen distinto hash se guardan en el mismo bucket por cuestiones de dispersión no cambiaran el resultado (por ejemplo, perro se guardaba con amor y nos daba 3 en lugar de 0)
@@ -48,14 +50,14 @@
 # 2026-09-24 — En conjunto (Julieta y Victoria) 
 - Ejemplo 1 pasa la prueba
 - Nos daba distinto el 10.out de nuestra salida, nos dimos cuenta que era porque no hundía el resultado de la consolidación y le hacía swap directo a la raíz. Como el arbol no quedaba consistente, no daba bien la prueba.
-- Andan pruebas 10,100,1000,10000,100000,1000000,crecientes,crecientesgrande,1000000. Cambiamos la función consolidar de recursiva a iterativa porque nos daba segmentation fault en la prueba 1000000, faltaría chequear más adelante denuevo las otras pruebas anteriores al 1000000, que anduvieron con la versión recursiva de consolidar.
+- Andan pruebas 10,100,1000,10000,100000,1000000,crecientes,crecientesgrande,1000000. Cambiamos la función consolidar de recursiva a iterativa porque nos daba segmentation fault en la prueba 1000000, faltaría chequear más adelante denuevo las otras pruebas anteriores al 1000000, que anduvieron con la versión recursiva de consolidar. Al encontranos con el error segmentation fault por primera vez no lo entendiamos completamente asi que le pedimos a Claude que nos dijiera una posible causa del error y nos indicó que debe ser un stack overflow al hacer la recursion. Con esto replanteamos la funcion con un while y se solucionó el problema.
 
 # 2026-10-08 - En conjunto (Julieta y Victoria)
 - Hicimos la parte de tomar los datos del input del ejercicio4.cpp
-- Discutimos sobre diferentes implementaciones, queda pendiente determinar como utilizaremos el heap. Definimos la clase abstracta del grafo. Decidimos que el grafo va a ser implementado conlista de adyacencia por el orden espacial que se exige
+- Discutimos sobre diferentes implementaciones, queda pendiente determinar como utilizaremos el heap. Definimos la clase abstracta del grafo. Decidimos que el grafo va a ser implementado con lista de adyacencia por el orden espacial que se exige
 
 # 2026-10-09 - En conjunto (Julieta y Victoria)
-- Implementamos el grafo. Decidimos que vamos a usar orden topológico y que el heap se utilizará en el algoritmo del orden topológico. Tendremos un arreglo auxiliar que vincule el nro del grafo(pos del arreglo) con la proridad. Tendremos un tipo modulo, que va a guardar el nro de vertice y su prioridad correspondiente. El heap va a ser de tipo modulo. Como ya tenemos un heap binario genérico de otro ejercicio, vamos a utilizarlo. Nos damos cuenta que tiene función consolidar como propia de un heap binario y esto no es correcto, entonces dejamos planteado para la próxima sacar esta función para que deje de ser propia del heap. Vamos a pensar la función consolidar fuera de la implementación del TAD del heap binario y utilizando sus funciones, ya que esto es lo que corresponde.
+- Implementamos el grafo. Decidimos que vamos a usar orden topológico y que el heap se utilizará en el algoritmo del orden topológico. Tendremos un arreglo auxiliar que vincule el nro del grafo (pos del arreglo) con la proridad. Tendremos un tipo modulo, que va a guardar el nro de vertice y su prioridad correspondiente. El heap va a ser de tipo modulo. Como ya tenemos un heap binario genérico de otro ejercicio, vamos a utilizarlo. Nos damos cuenta que tiene función consolidar como propia de un heap binario y esto no es correcto, entonces dejamos planteado para la próxima sacar esta función para que deje de ser propia del heap. Vamos a pensar la función consolidar fuera de la implementación del TAD del heap binario y utilizando sus funciones, ya que esto es lo que corresponde.
 - El grafo lo implementamos con lista de adyacencia y utilizamos la ListImp que se nos dio. La modificamos a esta y su clase abstracta para que tengan un iterador.
 - Escribimos el código para tomar los datos del input.
 
@@ -67,9 +69,10 @@
 # 2026-10-16 - Victoria
 - andan pruebas 100, 1000, 10000, 100000, 1000000, crecientes, decrecientes, dos_valores, ejemplo1, ejemplo2, ejemplo3 del ejercicio3
 
-# 2026-10-16 -En conjunto (Julieta y Victoria)
+# 2026-10-16 - En conjunto (Julieta y Victoria)
 - realizamos ejercicio 5. La idea es primero fijarnos si el grafo es conexo, o sea, si de caulquier refugio se pueden llegar a los demás. Esto lo realizamos con DFS y si nos da que no es conexo entonces es imposible y si no utilizamos kruskal. Kruskal utiliza un minHeap que tiene las aristas ordenadas por menor peso y MFset implementado con las dos optimizaciones. Si el origen y el destino de una arista estaban en distintos conjuntos, hacemos merge y vamos sumando el costo. No nos interesa en este caso el árbol de cubrimiento mínimo si no que el costo mínimo, es eso lo que retornamos.
-- para DFS utilizamos una pila porque el recursivo nos trajo problemas
+- para DFS utilizamos una pila porque el recursivo nos trajo problemas. 
+Al correr la prueba 100000 nos dio el error bad alloc. Despues de correrlo varias veces haciendo cambios vimos que el problema estaba en el dfs pero no lograbamos que funcione. Le preguntamos a Claude posibles causas del error y nos indicó que en la definición del heap estaba mal (lo iniciabamos con tamaño V*V ya que asi lo vimos en clase, pero ocupaba demasiada memoria). Tambien nos recomendó cambiar el algoritmo de recursivo a itertativo ya que podia causar segmentation fault. Probamos solo cambiando el tamaño del heap pero efectivamente nos daba seg fault asi que implementamos una pila y se resolvió el problema.
 
 # 2026-10-18 - Julieta
 - andan pruebas 10, 100, 1000, 10000, 100000, cadena, ciclo mínimo, ciclo parcial, ejemplo1, ejemplo2, ejemplo3, ejemplo4, ejemplo5, fifo_distinto, máximo, mínimo, minimo_lineal, prioridades iguales del ejercicio 4
@@ -79,6 +82,6 @@
 - dsu_inverso dio imposible y tendría que haber dado un número !!!
 - andan ejemplo4, ejemplo5, maximo, minimo, todos_iguales del ejercicio3.
 
-# 2026-10-22
+# 2026-10-22 - En conjunto (Julieta y Victoria)
 - arreglamos que en la arista inversa  se agregaba cuando el grafo es no dirigido, se estaba insertando en la lista de destino y no del origen. Por ejemplo: si tengo arista 1->2, inserto el 2 en la lista del 1 y agrego la arista inversa 2->1 que es agregar el 1 en la lista del 2. Nosotras estabamos agregando ambas a la lista 1.
 - anda prueba dsu_cadena_inversa del ejercicio5
